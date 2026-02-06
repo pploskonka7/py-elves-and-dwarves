@@ -1,10 +1,17 @@
 
 from app.players.player import Player
 
-class Dwarf(Player):
-    def __init__(self, favourite_dish):
-        self.favourite_dish = favourite_dish
 
-    @abstractmethod
-    def eat_favourite_dish(self):
-        print(f"{nickname} is eating {self.favourite_dish}")
+class Dwarf(Player):
+    def __init__(self, nickname: str, _favourite_dish: str) -> None:
+        super().__init__(nickname)
+        self._favourite_dish = _favourite_dish
+
+    def eat_favourite_dish(self) -> None:
+        print(f"{self.nickname} is eating {self._favourite_dish}")
+
+    def get_rating(self) -> None:
+        pass
+
+    def player_info(self) -> None:
+        pass
