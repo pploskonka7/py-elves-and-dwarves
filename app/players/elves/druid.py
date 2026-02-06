@@ -1,18 +1,16 @@
 
-from abc import ABC
-
 from app.players.elves.elf import Elf
 
 
-class Druid(Elf, ABC):
+class Druid(Elf):
     def __init__(
             self,
             nickname: str,
-            play_elf_song: str,
-            _favourite_spell: str
+            musical_instrument: str,
+            favourite_spell: str
     ) -> None:
-        super().__init__(nickname, play_elf_song)
-        self._favourite_spell = _favourite_spell
+        super().__init__(nickname, musical_instrument)
+        self._favourite_spell = favourite_spell
 
     def get_rating(self) -> int:
         return len(self._favourite_spell)

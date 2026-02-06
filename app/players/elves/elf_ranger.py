@@ -1,17 +1,16 @@
-from abc import ABC
 
 from app.players.elves.elf import Elf
 
 
-class ElfRanger(Elf, ABC):
+class ElfRanger(Elf):
     def __init__(
             self,
             nickname: str,
-            play_elf_song: str,
-            _bow_level: int
+            musical_instrument: str,
+            bow_level: int
     ) -> None:
-        super().__init__(nickname, play_elf_song)
-        self._bow_level = _bow_level
+        super().__init__(nickname, musical_instrument)
+        self._bow_level = bow_level
 
     def get_rating(self) -> int:
         return 3 * self._bow_level
